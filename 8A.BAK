@@ -1,0 +1,18 @@
+#include<conio.h>
+#include<iostream.h>
+class number{
+public:
+ static int cnt;
+ static void display(){
+  cout<<"static void function is called"<<cnt<<endl;
+  cnt++;
+ }
+};
+void main(){
+ number n1,n2,n3;
+ n1.display();
+ n2.display();
+ n3.display();
+ getch();
+
+}

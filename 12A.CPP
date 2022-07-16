@@ -1,0 +1,55 @@
+#include<conio.h>
+#include<iostream.h>
+//accept data 12/12/2002 and display 12/dic/2002
+class date{
+public:
+ int dd,mm,yyyy;
+ //constructor
+/* date(int d,int m,int y){
+  dd=d;
+  mm=m;
+  yyyy;
+ }*/
+ void accept(){
+  cout<<"enter date"<<endl;
+  cin>>dd;
+  cout<<"enter month"<<endl;
+  cin>>mm;
+  cout<<"enter year"<<endl;
+  cin>>yyyy;
+  cout<<"recived date:"<<dd<<":"<<mm<<":"<<yyyy<<endl;
+ }
+ void display();
+};
+
+//class function outside class
+void date::display(){
+int ch;
+ if(dd<=31|| dd!=0){
+  if(mm<=12 || mm!=0){
+     if(mm==1){
+     cout<<"date is :"<<dd<<" jan "<<yyyy;
+     }
+     else if(mm==2){
+     cout<<"date is :"<<dd<<" feb "<<yyyy;
+     }
+     else if(mm==3){
+     cout<<"date is :"<<dd<<" mar "<<yyyy;
+     }
+     else if(mm==4){
+     cout<<"date is :"<<dd<<" apr "<<yyyy;
+     }
+     else if(mm==12){
+     cout<<"date is :"<<dd<<" dec "<<yyyy;
+     }
+  }else { cout<<"invalid"<<endl; }
+ }else
+  { cout<<"invalid"<<endl;}
+}
+void main(){
+clrscr();
+ date d;
+ d.accept();
+ d.display();
+ getch();
+}

@@ -1,0 +1,62 @@
+#include<iostream.h>
+#include<conio.h>
+#include<fstream.h>
+class movie{
+public:
+ char name[30];
+ int year;
+ char direct[30];
+ int budget;
+
+ void accept(){
+  cout<<"enter name of movie"<<endl;
+  cin>>name;
+  //cin.getline(name,30);
+  cout<<"enter release year"<<endl;
+  cin>>year;
+  cout<<"enter the name of director"<<endl;
+  cin>>direct;
+  //cin.getline(direct,30);
+  cout<<"enter the movie bugdet"<<endl;
+  cin>>budget;
+
+  //file operations data saving
+
+  ofstream myfile("movie.txt");
+  myfile<<name;
+  myfile<<year;
+  myfile<<direct;
+  myfile<<budget;
+  myfile.close();
+  cout<<"successfully saved"<<endl;
+  }
+
+  void display(){
+   cout<<"-----------------------------------------"<<endl;
+   cout<<"name of the movie "<<name<<endl;
+   cout<<"release year "<<year<<endl;
+   cout<<"director of movie "<<direct<<endl;
+   cout<<"budget of movie "<<budget<<endl;
+  }
+
+/*  cout<<"reading from file"<<endl;
+  char name2[30];
+  int year2[10];
+  char direct2[20];
+  int budget2[10];
+
+  ifstream file("movie.txt");
+  file.getline(name2,30);
+  file.getline(year2,10);
+  file.getline(direct2,30);
+  file.getline(budget2,10);
+  file.close(); */
+
+};
+void main(){
+ clrscr();
+ movie m;
+ m.accept();
+ m.display();
+ getch();
+}
